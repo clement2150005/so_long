@@ -6,7 +6,7 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 11:06:03 by ccolin            #+#    #+#             */
-/*   Updated: 2024/08/08 16:21:09 by ccolin           ###   ########.fr       */
+/*   Updated: 2024/08/10 12:15:14 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@
 # include <mlx.h>
 # include "libft.h"
 # include "ft_printf.h"
+# include "get_next_line_bonus.h"
 
 #endif

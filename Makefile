@@ -6,7 +6,7 @@
 #    By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/08 16:19:44 by ccolin            #+#    #+#              #
-#    Updated: 2024/08/08 16:19:51 by ccolin           ###   ########.fr        #
+#    Updated: 2024/08/10 12:12:07 by ccolin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,11 +33,8 @@ RM		= rm -f
 %.o: %.c
 	$(CC) $(CFLAGS) $(MLX_INC) $(LIBFT_INC) -c $< -o $@
 
-$(NAME): $(OBJS) $(MLX_LIB) $(LIBFT_LIB)
+$(NAME): $(LIBFT_LIB) $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MLX_LIB) $(LIBFT_LIB) $(MLX_FLAGS)
-
-$(MLX_LIB):
-	@make -C $(MLX_DIR)
 
 $(LIBFT_LIB):
 	@make -C $(LIBFT_DIR)
@@ -47,12 +44,10 @@ all: $(NAME)
 clean:
 	$(RM) $(OBJS)
 	@make clean -C $(LIBFT_DIR)
-	@make clean -C $(MLX_DIR)
 
 fclean: clean
 	$(RM) $(NAME)
 	@make fclean -C $(LIBFT_DIR)
-	@make fclean -C $(MLX_DIR)
 
 re: fclean all
 
