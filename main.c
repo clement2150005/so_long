@@ -6,7 +6,7 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 11:06:16 by ccolin            #+#    #+#             */
-/*   Updated: 2024/08/10 14:58:10 by ccolin           ###   ########.fr       */
+/*   Updated: 2024/08/11 15:43:35 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	ft_isrectangle(char *map)
 
 	i = 0;
 	j = 0;
+	/*debug*/ft_printf("%s", map);
 	while (map[i] != '\n')
 		i++;
 	len = i;
@@ -74,7 +75,7 @@ void	ft_isrectangle(char *map)
 			j++;
 		}
 		i++;
-		if (len != j)
+ 		if (len != j)
 			ft_error("Error\nThe map must be rectangular\n");
 		j = 0;
 	}
@@ -94,20 +95,24 @@ void	ft_isclosed(char *map)
 	}
 	while (map[i])
 	{
-		if (map[i] == '\n' && !(map[i - 1] == '1' && (map[i + 1]) == '1'))
+		if (map[i] == '\n' && !(map[i - 1] == '1'))
 			ft_error("Error\nThe map is not surrounded by walls");
 		i++;
 	}
-	while (map[i--] != '\n')
+	i--;
+	while (map[i] != '\n')
+	{		
 		if (map[i] != '1')
 			ft_error("Error\nThe map is not surrounded by walls");
+		i--;
+	}
 	debug("map is closed");
 }
 
 void	ft_mapcheck(char *map)
 {
-	// ft_checkcharacters(map);
-	// ft_isrectangle(map);
+	ft_checkcharacters(map);
+	ft_isrectangle(map);
 	ft_isclosed(map);
 }
 
