@@ -6,7 +6,7 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 11:06:03 by ccolin            #+#    #+#             */
-/*   Updated: 2024/08/15 17:07:45 by ccolin           ###   ########.fr       */
+/*   Updated: 2024/08/15 18:04:21 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ typedef struct s_mlx
 	void	*exit;
 	void	*wall;
 	void	*empty;
+	int		collectibles;
+	int		playerx;
+	int		playery;
 	int		*height_player;
 	int		*height_collectible;
 	int		*height_exit;
@@ -60,7 +63,9 @@ void	ft_isrectangle(char *map);
 void	ft_isclosed(char *map);
 void	ft_isallowedchar(char *map);
 void	extractmap(char *filename, t_map *mapdata);
-void	debug(char *str);
 void	ft_error(char *errormessage);
+void	ft_alloc_sizes(t_mlx *mlx);
+void	ft_free_textures(t_mlx *mlx);
+void	ft_start_mlx(t_map *map, t_mlx *mlx);
 
 #endif

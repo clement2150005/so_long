@@ -6,7 +6,7 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 11:39:59 by ccolin            #+#    #+#             */
-/*   Updated: 2024/08/15 15:40:08 by ccolin           ###   ########.fr       */
+/*   Updated: 2024/08/15 17:57:24 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void	extractmap(char *filename, t_map *mapdata)
 		free(temp);
 		line = get_next_line(fd);
 	}
-	debug(map);
 	ft_mapcheck(map);
 	mapdata->map = ft_split(map, '\n');
 	ft_mapsize(mapdata);

@@ -6,7 +6,7 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 11:42:32 by ccolin            #+#    #+#             */
-/*   Updated: 2024/08/15 12:08:15 by ccolin           ###   ########.fr       */
+/*   Updated: 2024/08/15 17:58:56 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	ft_checkcharacters(char *map)
 		ft_error("Error\nThere is no player or more than 1 player in the map\n");
 	if (exit != 1)
 		ft_error("Error\nThere is no exit or more than 1 exit in the map\n");
-	debug("characters ok");
 }
 
 void	ft_isrectangle(char *map)
@@ -67,7 +66,6 @@ void	ft_isrectangle(char *map)
 			ft_error("Error\nThe map must be rectangular\n");
 		j = 0;
 	}
-	debug("rectangle ok");
 }
 
 void	ft_isclosed(char *map)
@@ -94,7 +92,6 @@ void	ft_isclosed(char *map)
 			ft_error("Error\nThe map is not surrounded by walls");
 		i--;
 	}
-	debug("map is closed");
 }
 
 void	ft_isallowedchar(char *map)
@@ -109,5 +106,4 @@ void	ft_isallowedchar(char *map)
 			ft_error("Error\nThe map contains forbidden character(s)");
 		i++;
 	}
-	debug("No forbidden charcaters");
 }

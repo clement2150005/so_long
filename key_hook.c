@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   key_hook.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/08 11:06:16 by ccolin            #+#    #+#             */
-/*   Updated: 2024/08/15 17:56:46 by ccolin           ###   ########.fr       */
+/*   Created: 2024/08/15 18:07:03 by ccolin            #+#    #+#             */
+/*   Updated: 2024/08/15 18:08:17 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char	**argv)
+void	ft_key_hook(void)
 {
-	t_map	map;
-	t_mlx	mlx;
-
-	if (argc != 2)
-		ft_error("Usage: ./so_long filename.ber\n");
-	extractmap(argv[1], &map);
-	ft_start_mlx(&map, &mlx);
-	ft_free_textures(&mlx);
+	
 }
