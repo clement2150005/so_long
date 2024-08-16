@@ -6,7 +6,7 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 17:53:49 by ccolin            #+#    #+#             */
-/*   Updated: 2024/08/15 18:16:50 by ccolin           ###   ########.fr       */
+/*   Updated: 2024/08/15 22:50:31 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void	ft_render_image(char c, t_mlx *mlx, int x, int y)
 	int	render;
 
 	render = 0;
+	render = mlx_put_image_to_window(mlx->mlx, mlx->win, \
+	mlx->empty, x * TILE, y * TILE);
 	if (c == 'P')
 	{
 		render = mlx_put_image_to_window(mlx->mlx, mlx->win, \
@@ -52,9 +54,6 @@ void	ft_render_image(char c, t_mlx *mlx, int x, int y)
 	else if (c == '1')
 		render = mlx_put_image_to_window(mlx->mlx, mlx->win, \
 		mlx->wall, x * TILE, y * TILE);
-	else if (c == '0')
-		render = mlx_put_image_to_window(mlx->mlx, mlx->win,\
-		mlx->empty, x * TILE, y * TILE);
 	else if (c == 'E')
 		render = mlx_put_image_to_window(mlx->mlx, mlx->win, \
 		mlx->exit, x * TILE, y * TILE);
