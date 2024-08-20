@@ -6,7 +6,7 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 11:06:03 by ccolin            #+#    #+#             */
-/*   Updated: 2024/08/15 18:04:21 by ccolin           ###   ########.fr       */
+/*   Updated: 2024/08/17 10:16:20 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,18 @@ typedef struct s_mlx
 	int		*width_empty;
 }					t_mlx;
 
+typedef struct s_param
+{
+	t_map	map;
+	t_mlx	mlx;
+}					t_param;
+
 # define TILE 32
-# define PLAYER "./xpm_images/player.xpm"
-# define WALL "./xpm_images/wall.xpm"
-# define COLLEC "./xpm_images/collectible.xpm"
-# define EMPTY "./xpm_images/empty.xpm"
-# define EXIT "./xpm_images/exit.xpm"
+# define PLAYER "./textures/player.xpm"
+# define WALL "./textures/wall.xpm"
+# define COLLEC "./textures/collectible.xpm"
+# define EMPTY "./textures/empty.xpm"
+# define EXIT "./textures/exit.xpm"
 
 void	ft_checkcharacters(char *map);
 void	ft_isrectangle(char *map);
@@ -67,5 +73,6 @@ void	ft_error(char *errormessage);
 void	ft_alloc_sizes(t_mlx *mlx);
 void	ft_free_textures(t_mlx *mlx);
 void	ft_start_mlx(t_map *map, t_mlx *mlx);
+void	ft_events(int keycode, void *map);
 
 #endif
