@@ -6,7 +6,7 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 17:53:49 by ccolin            #+#    #+#             */
-/*   Updated: 2024/08/17 10:24:48 by ccolin           ###   ########.fr       */
+/*   Updated: 2024/08/22 20:16:46 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,11 @@ void	ft_render_map(t_map *map, t_mlx *mlx)
 void	ft_start_mlx(t_map *map, t_mlx *mlx)
 {
 	t_param		param;
-	void		(*ft_events_ptr)(int, void *);
+	int			(*ft_events_ptr)(int, t_param *);
 
 	param.map = *map;
 	param.mlx = *mlx;
-	ft_events_ptr = ft_events;
+	ft_events_ptr = (int (*)(int, t_param *))ft_events;
 	mlx->mlx = mlx_init();
 	if (!mlx->mlx)
 		ft_error("Error initializing Minilibx");
@@ -100,5 +100,4 @@ void	ft_start_mlx(t_map *map, t_mlx *mlx)
 	ft_load_textures(mlx);
 	ft_render_map(map, mlx);
 	mlx_key_hook(mlx -> win, ft_events_ptr, &param);
-	mlx_loop(mlx->mlx);
 }

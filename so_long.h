@@ -6,7 +6,7 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 11:06:03 by ccolin            #+#    #+#             */
-/*   Updated: 2024/08/17 10:16:20 by ccolin           ###   ########.fr       */
+/*   Updated: 2024/08/22 20:31:41 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SO_LONG_H
 
 # include <stdlib.h>
+# include <stdio.h>
 # include <fcntl.h>
 # include <mlx.h>
 # include "libft.h"
@@ -74,5 +75,6 @@ void	ft_alloc_sizes(t_mlx *mlx);
 void	ft_free_textures(t_mlx *mlx);
 void	ft_start_mlx(t_map *map, t_mlx *mlx);
 void	ft_events(int keycode, void *map);
+void	ft_up(t_param *param);
 
 #endif
