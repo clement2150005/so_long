@@ -1,16 +1,18 @@
 {
     "configurations": [
         {
-            "name": "Linux",
+            "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/libft"
+                "${workspaceFolder}/libft",
+                "${workspaceFolder}/minilibx_opengl_20191021",
+				"${workspaceFolder}/includes"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "intelliSenseMode": "linux-gcc-x64"
+            "intelliSenseMode": "macos-gcc-x64"
         }
     ],
     "version": 4

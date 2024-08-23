@@ -6,14 +6,14 @@
 #    By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/08 16:19:44 by ccolin            #+#    #+#              #
-#    Updated: 2024/08/22 20:33:48 by ccolin           ###   ########.fr        #
+#    Updated: 2024/08/23 15:58:25 by ccolin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= so_long
 
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror -Iinclude #-fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -Iincludes -fsanitize=address
 
 MLX_DIR	= minilibx_opengl_20191021
 MLX_LIB	= $(MLX_DIR)/libmlx.a
@@ -24,7 +24,8 @@ LIBFT_DIR = libft
 LIBFT_LIB = $(LIBFT_DIR)/libft.a
 LIBFT_INC = -I$(LIBFT_DIR) -I$(LIBFT_DIR)/includes
 
-SRCS	= $(wildcard *.c)
+SRC_DIR	= src
+SRCS	= $(wildcard $(SRC_DIR)/*.c)
 
 OBJS	= $(SRCS:.c=.o)
 
