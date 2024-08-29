@@ -6,32 +6,17 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 11:42:32 by ccolin            #+#    #+#             */
-/*   Updated: 2024/08/23 15:04:22 by ccolin           ###   ########.fr       */
+/*   Updated: 2024/08/29 10:10:18 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_floodfill(char **map, int y, int x)
-{
-	if (x < 0 || y < 0 || !map[y + 1][x] || !map[y][x + 1])
-		return ;
-	map[y][x] = 'P';
-	if (map[y + 1][x] != '1' && map[y + 1][x] != 'P')
-		ft_floodfill(map, y + 1, x);
-	if (map[y - 1][x] != '1' && map[y - 1][x] != 'P')
-		ft_floodfill(map, y - 1, x);
-	if (map[y][x + 1] != '1' && map[y][x + 1] != 'P')
-		ft_floodfill(map, y, x + 1);
-	if (map[y][x - 1] != '1' && map[y][x - 1] != 'P')
-		ft_floodfill(map, y, x - 1);
-}
-
 void	ft_ispath(char **map)
 {
 	int	y;
 	int	x;
-	
+
 	y = 0;
 	while (map[y])
 	{

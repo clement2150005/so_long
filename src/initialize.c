@@ -6,7 +6,7 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 17:53:49 by ccolin            #+#    #+#             */
-/*   Updated: 2024/08/23 16:08:55 by ccolin           ###   ########.fr       */
+/*   Updated: 2024/08/29 10:28:20 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,11 +87,7 @@ void	ft_render_map(t_map *map, t_mlx *mlx)
 void	ft_start_mlx(t_map *map, t_mlx *mlx)
 {
 	static t_param		param;
-	int			(*ft_events_ptr)(int, t_param *);
-	int			(*ft_cleanup_ptr)(int, t_param *);
 
-	ft_cleanup_ptr = (int (*)(int, t_param *))ft_cleanup;
-	ft_events_ptr = (int (*)(int, t_param *))ft_events;
 	mlx->mlx = mlx_init();
 	if (!mlx->mlx)
 		ft_error("Error initializing Minilibx");
@@ -102,6 +98,6 @@ void	ft_start_mlx(t_map *map, t_mlx *mlx)
 	ft_render_map(map, mlx);
 	param.map = map;
 	param.mlx = mlx;
-	mlx_key_hook(mlx -> win, ft_events_ptr, &param);
-	mlx_hook(mlx->win, 17, 0, ft_cleanup_ptr, &param);
+	mlx_key_hook(mlx -> win, ft_events, &param);
+	mlx_hook(mlx->win, 17, 0, ft_cleanup, &param);
 }

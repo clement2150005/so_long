@@ -6,7 +6,7 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 09:36:54 by ccolin            #+#    #+#             */
-/*   Updated: 2024/08/23 16:25:16 by ccolin           ###   ########.fr       */
+/*   Updated: 2024/08/29 10:31:04 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_up(t_param *param)
 {
 	if (param->map->map[param->mlx->playery - 1][param->mlx->playerx] == '1')
-		return;
+		return ;
 	if (param->map->map[param->mlx->playery - 1][param->mlx->playerx] == 'E')
 	{
 		if (ft_isonmap(param->map->map, "C"))
@@ -36,7 +36,7 @@ void	ft_up(t_param *param)
 void	ft_down(t_param *param)
 {
 	if (param->map->map[param->mlx->playery + 1][param->mlx->playerx] == '1')
-		return;
+		return ;
 	if (param->map->map[param->mlx->playery + 1][param->mlx->playerx] == 'E')
 	{
 		if (ft_isonmap(param->map->map, "C"))
@@ -57,7 +57,7 @@ void	ft_down(t_param *param)
 void	ft_left(t_param *param)
 {
 	if (param->map->map[param->mlx->playery][param->mlx->playerx - 1] == '1')
-		return;
+		return ;
 	if (param->map->map[param->mlx->playery][param->mlx->playerx - 1] == 'E')
 	{
 		if (ft_isonmap(param->map->map, "C"))
@@ -78,7 +78,7 @@ void	ft_left(t_param *param)
 void	ft_right(t_param *param)
 {
 	if (param->map->map[param->mlx->playery][param->mlx->playerx + 1] == '1')
-		return;
+		return ;
 	if (param->map->map[param->mlx->playery][param->mlx->playerx + 1] == 'E')
 	{
 		if (ft_isonmap(param->map->map, "C"))
@@ -96,14 +96,15 @@ void	ft_right(t_param *param)
 	return ;
 }
 
-void	ft_events(int keycode, void *param)
+int	ft_events(int keycode, void *param)
 {
-	t_param *p = (t_param *)param;
-	int	w;
-	int	a;
-	int	s;
-	int	d;
+	t_param	*p;
+	int		w;
+	int		a;
+	int		s;
+	int		d;
 
+	p = (t_param *)param;
 	w = 13;
 	a = 0;
 	s = 1;
@@ -120,5 +121,5 @@ void	ft_events(int keycode, void *param)
 		ft_right(p);
 	if (keycode == 53)
 		ft_cleanup(p);
-	return ;
+	return (0);
 }

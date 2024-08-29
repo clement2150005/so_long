@@ -6,7 +6,7 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 11:06:16 by ccolin            #+#    #+#             */
-/*   Updated: 2024/08/23 15:39:24 by ccolin           ###   ########.fr       */
+/*   Updated: 2024/08/29 10:21:48 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,4 @@ int	main(int argc, char	**argv)
 	ft_start_mlx(&map, &mlx);
 	mlx.moves = 0;
 	mlx_loop(mlx.mlx);
-	ft_printf("program end"); //debug
 }

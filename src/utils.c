@@ -6,7 +6,7 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 11:46:08 by ccolin            #+#    #+#             */
-/*   Updated: 2024/08/23 11:45:36 by ccolin           ###   ########.fr       */
+/*   Updated: 2024/08/29 10:22:23 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_freemap(char **map)
 	free(map);
 }
 
-int		ft_isonmap(char **map, char *charset)
+int	ft_isonmap(char **map, char *charset)
 {
 	int	i;
 	int	j;

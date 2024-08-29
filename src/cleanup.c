@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cleanup.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/29 10:10:49 by ccolin            #+#    #+#             */
+/*   Updated: 2024/08/29 10:30:52 by ccolin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	ft_unload_textures(t_mlx *mlx)
@@ -14,7 +26,7 @@ void	ft_unload_textures(t_mlx *mlx)
 		mlx_destroy_image(mlx->mlx, mlx->empty);
 }
 
-void	ft_cleanup(t_param *param)
+int	ft_cleanup(t_param *param)
 {
 	ft_unload_textures(param->mlx);
 	ft_free_textures(param->mlx);

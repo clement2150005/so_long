@@ -6,7 +6,7 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 11:06:03 by ccolin            #+#    #+#             */
-/*   Updated: 2024/08/23 16:08:06 by ccolin           ###   ########.fr       */
+/*   Updated: 2024/08/29 10:30:46 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,13 +75,13 @@ void	ft_error(char *errormessage);
 void	ft_alloc_sizes(t_mlx *mlx);
 void	ft_free_textures(t_mlx *mlx);
 void	ft_start_mlx(t_map *map, t_mlx *mlx);
-void	ft_events(int keycode, void *map);
+int		ft_events(int keycode, void *map);
 void	ft_up(t_param *param);
 void	ft_render_map(t_map *map, t_mlx *mlx);
 void	ft_freemap(char **map);
 int		ft_isonmap(char **map, char *charset);
 void	ft_ispath(char **map);
 void	ft_floodfill(char **map, int y, int x);
-void	ft_cleanup(t_param *param);
+int		ft_cleanup(t_param *param);
 
 #endif
