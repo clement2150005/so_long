@@ -6,7 +6,7 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 11:39:59 by ccolin            #+#    #+#             */
-/*   Updated: 2024/08/23 15:02:57 by ccolin           ###   ########.fr       */
+/*   Updated: 2024/09/08 16:30:33 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ void	extractmap(char *filename, t_map *mapdata)
 		ft_error("Error\n Could not close the map file");
 	ft_mapcheck(map);
 	mapdata->map = ft_split(map, '\n');
+	free(map);
 	ft_mapsize(mapdata);
 }
