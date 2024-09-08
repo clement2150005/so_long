@@ -6,14 +6,14 @@
 #    By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/08 16:19:44 by ccolin            #+#    #+#              #
-#    Updated: 2024/08/23 15:58:25 by ccolin           ###   ########.fr        #
+#    Updated: 2024/09/08 17:00:40 by ccolin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= so_long
 
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror -Iincludes -fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -Iincludes #-fsanitize=address
 
 MLX_DIR	= minilibx_opengl_20191021
 MLX_LIB	= $(MLX_DIR)/libmlx.a
